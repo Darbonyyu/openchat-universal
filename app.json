@@ -2,44 +2,25 @@
   "expo": {
     "name": "OpenChat Universal",
     "slug": "openchat-universal",
-    "scheme": "openchat",
     "version": "1.0.0",
     "orientation": "portrait",
-    "userInterfaceStyle": "automatic",
-    "newArchEnabled": true,
+    "userInterfaceStyle": "light",
+    "platforms": ["ios", "android"],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.openchat.universal"
     },
     "android": {
       "package": "com.openchat.universal",
-      "permissions": [
-        "INTERNET",
-        "ACCESS_NETWORK_STATE"
-      ],
       "adaptiveIcon": {
-        "backgroundColor": "#F6F6F2"
+        "backgroundColor": "#ffffff"
       }
-    },
-    "web": {
-      "bundler": "metro"
     },
     "plugins": [
       "expo-router",
       "expo-sqlite",
       "expo-secure-store",
       "react-native-reanimated"
-    ],
-    "experiments": {
-      "typedRoutes": true
-    },
-    "extra": {
-      "router": {
-        "origin": false
-      },
-      "eas": {
-        "projectId": "auto"
-      }
-    }
+    ]
   }
 }

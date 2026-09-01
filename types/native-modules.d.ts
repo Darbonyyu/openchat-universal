@@ -1,13 +1,14 @@
-declare module 'react-native-paper' {
-  export const PaperProvider: React.ComponentType<{ children?: React.ReactNode }>;
-}
-
 declare module 'react-native-gesture-handler' {
   export const GestureHandlerRootView: React.ComponentType<{ children?: React.ReactNode; style?: object }>;
 }
 
 declare module 'lucide-react-native' {
-  interface LucideProps { color?: string; size?: number; }
+  interface LucideProps { 
+    color?: string; 
+    size?: number;
+    strokeWidth?: number;
+    fill?: string;
+  }
   export const ArrowLeft: React.ComponentType<LucideProps>;
   export const Bot: React.ComponentType<LucideProps>;
   export const Check: React.ComponentType<LucideProps>;

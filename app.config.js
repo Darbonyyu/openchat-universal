@@ -1,0 +1,26 @@
+module.exports = {
+  expo: {
+    name: "OpenChat Universal",
+    slug: "openchat-universal",
+    version: "1.0.0",
+    orientation: "portrait",
+    userInterfaceStyle: "light",
+    platforms: ["ios", "android"],
+    ios: {
+      supportsTablet: true,
+      bundleIdentifier: "com.openchat.universal"
+    },
+    android: {
+      package: "com.openchat.universal",
+      adaptiveIcon: {
+        backgroundColor: "#ffffff"
+      }
+    },
+    plugins: [
+      "expo-router",
+      "expo-sqlite",
+      "expo-secure-store",
+      "react-native-reanimated"
+    ]
+  }
+};
