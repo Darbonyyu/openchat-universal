@@ -1,0 +1,4 @@
+export type ProviderFormat = 'openai' | 'anthropic' | 'gemini' | 'ollama' | 'openrouter' | 'custom-openai' | 'unknown';
+export interface ModelInfo { id: string; name: string; contextWindow?: number; supportsVision?: boolean; supportsTools?: boolean; supportsStreaming?: boolean; }
+export interface ProviderConfig { id: string; name: string; baseURL: string; apiKey: string; format: ProviderFormat; models: ModelInfo[]; defaultModel: string; customHeaders?: Record<string, string>; isLocal?: boolean; }
+export interface ChatMessage { id: string; role: 'system' | 'user' | 'assistant'; content: string; createdAt: string; }

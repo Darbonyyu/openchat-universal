@@ -1,0 +1,6 @@
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { create } from 'zustand';
+import { createJSONStorage, persist } from 'zustand/middleware';
+import type { ChatMessage, ProviderConfig } from '@/types/provider';
+interface AppState { providers: ProviderConfig[]; activeProviderId: string | null; messages: ChatMessage[]; addProvider: (provider: ProviderConfig) => void; setActiveProvider: (id: string) => void; addMessage: (message: ChatMessage) => void; setMessages: (messages: ChatMessage[]) => void; clearChat: () => void; }
+export const useAppStore = create<AppState>()(persist((set) => ({ providers: [], activeProviderId: null, messages: [], addProvider: (provider) => set((state) => ({ providers: [...state.providers.filter((item) => item.id !== provider.id), provider], activeProviderId: provider.id })), setActiveProvider: (id) => set({ activeProviderId: id }), addMessage: (message) => set((state) => ({ messages: [...state.messages, message] })), setMessages: (messages) => set({ messages }), clearChat: () => set({ messages: [] }) }), { name: 'openchat-settings', storage: createJSONStorage(() => AsyncStorage), partialize: (state) => ({ providers: state.providers.map(({ apiKey: _apiKey, ...provider }) => ({ ...provider, apiKey: '' })), activeProviderId: state.activeProviderId }) }));
