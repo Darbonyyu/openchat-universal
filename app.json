@@ -1,0 +1,1 @@
+{"expo":{"name":"OpenChat Universal","slug":"openchat-universal","scheme":"openchat","version":"1.0.0","orientation":"portrait","plugins":["expo-router","expo-sqlite","expo-secure-store","react-native-reanimated"],"experiments":{"typedRoutes":true},"ios":{"supportsTablet":true},"android":{"package":"com.openchat.universal"}}}

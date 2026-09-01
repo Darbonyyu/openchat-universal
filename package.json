@@ -1,0 +1,11 @@
+{
+  "name": "openchat-universal",
+  "version": "1.0.0",
+  "private": true,
+  "main": "expo-router/entry",
+  "scripts": {"start": "expo start", "android": "expo start --android", "ios": "expo start --ios", "typecheck": "tsc --noEmit"},
+  "dependencies": {
+    "@gorhom/bottom-sheet": "^5.1.2", "@react-native-async-storage/async-storage": "^2.1.2", "@react-navigation/native": "^7.0.14", "axios": "^1.8.4", "clsx": "^2.1.1", "expo": "^52.0.0", "expo-constants": "~17.0.8", "expo-fetch": "0.0.0", "expo-router": "~4.0.20", "expo-secure-store": "~14.0.1", "expo-sqlite": "~15.1.2", "lucide-react-native": "^0.511.0", "nativewind": "^4.1.23", "react": "^18.3.1", "react-native": "^0.76.7", "react-native-gesture-handler": "~2.20.2", "react-native-markdown-display": "^7.0.2", "react-native-paper": "^5.13.1", "react-native-reanimated": "~3.16.7", "react-native-safe-area-context": "4.12.0", "zustand": "^5.0.3"
+  },
+  "devDependencies": {"@types/react": "~18.3.12", "tailwindcss": "^3.4.17", "typescript": "^5.3.3"}
+}
