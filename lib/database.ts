@@ -1,0 +1,3 @@
+import type { SQLiteDatabase } from 'expo-sqlite';
+export async function migrateDb(db: SQLiteDatabase): Promise<void> { await db.execAsync(`CREATE TABLE IF NOT EXISTS chats (id TEXT PRIMARY KEY NOT NULL, role TEXT NOT NULL, content TEXT NOT NULL, created_at TEXT NOT NULL);`); }
+export async function loadMessages(db: SQLiteDatabase): Promise<Array<{ id: string; role: 'system' | 'user' | 'assistant'; content: string; createdAt: string }>> { const rows = await db.getAllAsync<{ id: string; role: 'system' | 'user' | 'assistant'; content: string; created_at: string }>('SELECT id, role, content, created_at FROM chats ORDER BY created_at ASC'); return rows.map((row) => ({ id: row.id, role: row.role, content: row.content, createdAt: row.created_at })); }
